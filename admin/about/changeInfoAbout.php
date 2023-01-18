@@ -20,7 +20,7 @@
 ?>
 <?php
     $title=$_POST["title"];
-    $description=$_POST["descriptions"];
+    $description=$_POST["description"];
     $sql = "UPDATE about SET title=:title, description=:description, filename=:filename";
 /** @var CONNECT_TO_DB $pdo */
     $query = $pdo->prepare($sql);
