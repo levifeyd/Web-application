@@ -1,5 +1,5 @@
 <?php session_start();?>
-<?php require_once '../functions/connect.php';?>
+<?php require_once '../connect_to_db/connect_to_db.php';?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,6 +16,7 @@
         <a href="/logout.php">Выйти</a>
         <br>
         <?php
+        /** @var CONNECT_TO_DATABSE $pdo */
         $sql=$pdo->prepare("SELECT * FROM about");
         $sql->execute();
         $res=$sql->fetch(PDO::FETCH_OBJ);
@@ -35,7 +36,7 @@
 
 
     <?php else:
-        echo '<h2>Вы что хакер ?</h2>';
+        echo '<h2>Доступ закрыт ?</h2>';
         echo '<a href="/">На главную</a>';
         ?>
 
