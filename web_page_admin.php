@@ -17,7 +17,7 @@
     <br>
     <a href="/admin/contact.php">Контакты</a>
     <a href="">Хэдер</a>
-    <a href="/admin/services/changeInfoServices.php">Услуги</a>
+    <a href="/admin/services.php">Услуги</a>
     <a href="/admin/about.php">О нас</a>
 
 <?php else:

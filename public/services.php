@@ -15,7 +15,6 @@
         </div>
         <div class="row">
 
-
             <?php foreach ($getServicesInfoFromQuery as $service):?>
             <div class="col-lg-3 col-md-6 mb-lg-0">
                 <div class="person">
@@ -30,8 +29,6 @@
                 </div>
             </div>
             <?php endforeach ?>
-
-
 
         </div>
     </div>
