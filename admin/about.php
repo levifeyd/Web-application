@@ -17,9 +17,9 @@
         <br>
         <?php
         /** @var CONNECT_TO_DATABSE $pdo */
-        $sql=$pdo->prepare("SELECT * FROM about");
+        $sql = $pdo->prepare("SELECT * FROM about");
         $sql->execute();
-        $res=$sql->fetch(PDO::FETCH_OBJ);
+        $res = $sql->fetch(PDO::FETCH_OBJ);
         ?>
         <form action="/admin/about/about.php" method="post" enctype=multipart/form-data">
 

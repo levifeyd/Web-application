@@ -1,8 +1,9 @@
-<?php require_once './functions/connect.php';?>
+<?php require_once './connect_to_db/connect_to_db.php';?>
 <?php
-$sql2 = $pdo->prepare("SELECT * FROM services"); // подготовка запроса
-$sql2 -> execute();// выполнение запроса
-$services = $sql2->fetchALL(PDO::FETCH_OBJ);
+    /** @var CONNECT_TO_DATABSE $pdo */
+    $sqlDb = $pdo->prepare("SELECT * FROM services");
+    $sqlDb -> execute();
+    $services = $sqlDb->fetchALL(PDO::FETCH_OBJ);
 ?>
 <div class="site-section">
     <div class="container">

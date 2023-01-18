@@ -17,9 +17,9 @@
         <br>
         <?php
         /** @var CONNECT_TO_DATABSE $pdo */
-        $sql=$pdo->prepare("SELECT * FROM services");
-        $sql->execute();
-        while ($res=$sql->fetch(PDO::FETCH_OBJ)) : ?>
+        $sql = $pdo -> prepare("SELECT * FROM services");
+        $sql -> execute();
+        while ($res=$sql -> fetch(PDO::FETCH_OBJ)) : ?>
         <form action="/admin/services/services.php" method="post" enctype=multipart/form-data">
 
             <input type="text" name="title" value="<?php echo $res->title ?>">

@@ -1,9 +1,10 @@
 <?php require 'public/contact.php';?>
-<?php require_once './functions/connect.php';?>
+<?php require_once './connect_to_db/connect_to_db.php';?>
 <?php
-$row = $pdo->prepare("SELECT * FROM about"); // подготовка запроса
-$row -> execute();// выполнение запроса
-$about = $row->fetch(PDO::FETCH_OBJ);
+    /** @var CONNECT_TO_DATABSE $pdo */
+    $row = $pdo->prepare("SELECT * FROM about"); // подготовка запроса
+    $row -> execute();// выполнение запроса
+    $about = $row->fetch(PDO::FETCH_OBJ);
 ?>
 
 

@@ -1,8 +1,9 @@
-<?php require_once './functions/connect.php';?>
+<?php require_once './connect_to_db/connect_to_db.php';?>
 <?php
-$sql=$pdo->prepare("SELECT * FROM contact"); // подготовка запроса
-$sql->execute();// выполнение запроса
-$res=$sql->fetch(PDO::FETCH_ASSOC);
+    /** @var CONNECT_TO_DATABSE $pdo */
+    $sql = $pdo->prepare("SELECT * FROM contact"); // подготовка запроса
+    $sql->execute();// выполнение запроса
+    $res = $sql->fetch(PDO::FETCH_ASSOC);
 ?>
 
 <!DOCTYPE html>
@@ -12,8 +13,8 @@ $res=$sql->fetch(PDO::FETCH_ASSOC);
     <meta name="description" content="<?php echo $res["description"]?>">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
 <div class="site-wrap">
