@@ -4,13 +4,12 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title></title>
+    <title>Административная панель</title>
 </head>
 <body>
 <div style="text-align: center">
-    <h1>Админка редактирования о нас</h1>
+    <h1>Панель редактирования о нас</h1>
     <?php if (!empty($_SESSION["login"])) :?>
-
         <?php echo 'Добрый день, '.$_SESSION['login']; ?>
         <br>
         <a href="/logout.php">Выйти</a>
@@ -21,8 +20,7 @@
         $sql->execute();
         $res = $sql->fetch(PDO::FETCH_OBJ);
         ?>
-        <form action="/admin/about/about.php" method="post" enctype=multipart/form-data">
-
+        <form action="/admin/about/changeInfoAbout.php" method="post" enctype="multipart/form-data">
             <input type="text" name="title" value="<?php echo $res->title ?>">
             <input type="text" name="description" value="<?php echo $res->description ?>">
             <p>
@@ -39,8 +37,6 @@
         echo '<h2>Доступ закрыт ?</h2>';
         echo '<a href="/">На главную</a>';
         ?>
-
-
     <?php endif ?>
 </div>
 </body>
