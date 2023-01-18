@@ -3,7 +3,7 @@
     /** @var CONNECT_TO_DATABSE $pdo */
     $sqlDb = $pdo->prepare("SELECT * FROM services");
     $sqlDb -> execute();
-    $services = $sqlDb->fetchALL(PDO::FETCH_OBJ);
+    $getServicesInfoFromQuery = $sqlDb->fetchALL(PDO::FETCH_OBJ);
 ?>
 <div class="site-section">
     <div class="container">
@@ -16,7 +16,7 @@
         <div class="row">
 
 
-            <?php foreach ($services as $service):?>
+            <?php foreach ($getServicesInfoFromQuery as $service):?>
             <div class="col-lg-3 col-md-6 mb-lg-0">
                 <div class="person">
                     <figure>

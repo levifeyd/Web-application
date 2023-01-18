@@ -17,15 +17,15 @@
         <br>
     <?php
         /** @var CONNECT_TO_DATABSE $pdo */
-        $sql=$pdo->prepare("SELECT * FROM contact");
-        $sql->execute();
-        $res=$sql->fetch(PDO::FETCH_OBJ);
+        $sql = $pdo -> prepare("SELECT * FROM contact");
+        $sql -> execute();
+        $getContactInfoFromQuery = $sql -> fetch(PDO::FETCH_OBJ);
     ?>
         <form action="/admin/contact/contact.php" method="post">
 
-        <input type="text" name="city" value="<?php echo $res->city ?>">
-        <input type="text" name="phone" value="<?php echo $res->phone ?>">
-        <input type="text" name="email" value="<?php echo $res->email ?>">
+        <input type="text" name="city" value="<?php echo $getContactInfoFromQuery->city ?>">
+        <input type="text" name="phone" value="<?php echo $getContactInfoFromQuery->phone ?>">
+        <input type="text" name="email" value="<?php echo $getContactInfoFromQuery->email ?>">
         <input type="submit" value="Сохранить">
 
     </form>
@@ -35,8 +35,6 @@
         echo '<h2>Доступ закрыт ?</h2>';
         echo '<a href="/">На главную</a>';
         ?>
-
-
     <?php endif ?>
 </div>
 </body>

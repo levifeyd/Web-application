@@ -3,14 +3,14 @@
     /** @var CONNECT_TO_DATABSE $pdo */
     $sql = $pdo->prepare("SELECT * FROM contact"); // подготовка запроса
     $sql->execute();// выполнение запроса
-    $res = $sql->fetch(PDO::FETCH_ASSOC);
+    $getInfoFromQuery = $sql->fetch(PDO::FETCH_ASSOC);
 ?>
 
 <!DOCTYPE html>
 <html>
 <head>
-    <title><?php echo $res["title"]?></title>
-    <meta name="description" content="<?php echo $res["description"]?>">
+    <title><?php echo $getInfoFromQuery["title"]?></title>
+    <meta name="description" content="<?php echo $getInfoFromQuery["description"]?>">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -40,7 +40,7 @@
                     <div class="quick-contact-icons d-flex">
 
                         <div class="text">
-                            <span class="h4 d-block"><?php echo $res["city"]?></span>
+                            <span class="h4 d-block"><?php echo $getInfoFromQuery["city"]?></span>
 
                         </div>
                     </div>
@@ -50,7 +50,7 @@
                     <div class="quick-contact-icons d-flex">
 
                         <div class="text">
-                            <span class="h4 d-block"><?php echo $res["phone"]?></span>
+                            <span class="h4 d-block"><?php echo $getInfoFromQuery["phone"]?></span>
 
                         </div>
                     </div>
@@ -60,7 +60,7 @@
                     <div class="quick-contact-icons d-flex">
 
                         <div class="text">
-                            <span class="h4 d-block"><?php echo $res["email"]?></span>
+                            <span class="h4 d-block"><?php echo $getInfoFromQuery["email"]?></span>
 
                         </div>
                     </div>
