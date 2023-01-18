@@ -27,12 +27,9 @@
                 <input type="file" name="im">
             </p>
             <input type="submit" name="save" value="Сохранить">
-
         </form>
         <br>
         <img src="/images/<?php echo $res->filename ?>" width="200">
-
-
     <?php else:
         echo '<h2>Доступ закрыт ?</h2>';
         echo '<a href="/">На главную</a>';
