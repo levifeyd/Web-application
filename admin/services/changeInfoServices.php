@@ -8,7 +8,7 @@
         $type = getimagesize($_FILES['im']['tmp_name']);
         if($type  && ($type['mime'] != 'image/png' || $type['mime'] != 'image/jpg' || $type['mime'] != 'image.jpeg' )) {
             if ($_FILES['im']['name'] < 1024 * 1000) {
-                $upload = '../img/'.$_FILES['im']['name'];
+                $upload = '../../images/'.$_FILES['im']['name'];
                 if (move_uploaded_file($_FILES['im']['tmp_name'], $upload)) echo "Файл загружен";
                 else echo "Ошибка при загрузке файла";
             } else exit("Размер файла превышен");
@@ -29,6 +29,6 @@
     /** @var CONNECT_TO_DB $pdo */
     $query = $pdo->prepare($sql);
     $query->execute(["title" => $title, "price" => $price, "filename" => $_FILES['im']['name']]);
-//    echo '<meta HTTP-EQUIV="Refresh" content="0; URl=/admin/services.php">';
+    echo '<meta HTTP-EQUIV="Refresh" content="0; URl=/admin/services.php">';
 ?>
 

@@ -1,4 +1,3 @@
-
 <?php require 'public/contact.php';?>
 <?php require_once './connect_to_db/connect_to_db.php';?>
 <?php
