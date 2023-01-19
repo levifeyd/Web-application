@@ -5,7 +5,7 @@
     $password = $_POST["password"];
 
 /** @var CONNECT_TO_DATABSE $pdo */
-$sql=$pdo->prepare("SELECT id,login FROM user WHERE login=:login AND password=:password");
+    $sql=$pdo->prepare("SELECT id,login FROM user WHERE login=:login AND password=:password");
     $sql->execute(array('login'=>$login,'password'=>$password));
     $array=$sql->fetch(PDO::FETCH_ASSOC);
 
