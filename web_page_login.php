@@ -32,7 +32,7 @@
         <div class="row">
             <div class="col">
                 <h1>Форма регистрации</h1>
-                <form action="validation_form/check.php" method="post" size="400 px">
+                <form action="checkUsersInfo/check.php" method="post" size="400 px">
                     <input type="text" class = "form-control" name="login"
                            id="login" placeholder="Введите логин"><br>
                     <input type="text" class="form-control" name="password"
@@ -43,7 +43,7 @@
             </div>
             <div class="col">
                 <h1>Форма авторизации</h1>
-                <form action="admin/admin.php" method="post">
+                <form action="checkUsersInfo/login.php" method="post">
                     <input type="text" class = "form-control" name="login"
                            id="login" placeholder="Введите логин"><br>
                     <input type="text" class="form-control" name="password"
