@@ -4,7 +4,7 @@
     /** @var CONNECT_TO_DATABSE $pdo */
     $dbSql = $pdo->prepare("SELECT * FROM header");
     $dbSql-> execute();
-    $getNameFromQuery = $dbSql->fetch(PDO::FETCH_OBJ); // выводим объект
+    $getNameFromQuery = $dbSql->fetch(PDO::FETCH_OBJ);
 ?>
     <div class="intro-section" style="background-image: url('images/<?php echo $getNameFromQuery->filename?>');">
         <div class="container">
