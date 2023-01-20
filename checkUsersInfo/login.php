@@ -11,7 +11,7 @@
 
     if ($array["id"] > 0) { // id существует в базе данных
         $_SESSION['login'] = $array["login"];
-        header('Location:/web_page_admin.php'); // делаем редирект на admin панель
+        header('Location:/web_page_admin.php');
     } else {
         header('Location:/web_page_login.php');
     }

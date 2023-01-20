@@ -10,7 +10,7 @@
 <div style="text-align: center">
     <h1>Админинстративная панель редактирования услуг</h1>
     <?php if (!empty($_SESSION["login"])) :?>
-        <?php echo 'Добрый день, '.$_SESSION['login']; ?>
+        <?php echo 'Добрый день, '.$_SESSION['login']; ?><br>
             <br>
         <a href="/logout.php">Выйти</a>
             <br>
@@ -19,10 +19,10 @@
         $sql = $pdo -> prepare("SELECT * FROM services");
         $sql -> execute();
         while ($res = $sql -> fetch(PDO::FETCH_OBJ)) : ?>
-            <form action="/admin/services/changeInfoServices.php/<?php echo $res->id ?>" method="post" enctype="multipart/form-data">
-                <?php echo $res->id ?><br>
+            <form action="/admin/services/changeInfoServices.php/<?php echo $res->id ?>" method="post" enctype="multipart/form-data"><br>
                 <input type="text" name="title" value="<?php echo $res->title ?>">
-                <input type="text" name="price" value="<?php echo $res->price ?>">
+                <input type="text" name="price" value="<?php echo $res->price ?>"><br>
+                <?php echo "Файл :".$res->id ?><br>
                 <p>
                     <input type="file" name="im">
                 </p>

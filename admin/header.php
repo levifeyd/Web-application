@@ -10,9 +10,9 @@
 <div style="text-align: center">
     <h1>Панель редактирования фона Web - страницы</h1>
     <?php if (!empty($_SESSION["login"])) :?>
-        <?php echo 'Добрый день, '.$_SESSION['login']; ?>
+        <?php echo 'Добрый день, '.$_SESSION['login']; ?><br>
         <br>
-        <a href="/logout.php">Выйти</a>
+        <a href="/logout.php">Выйти</a><br>
         <br>
         <?php
         /** @var CONNECT_TO_DATABSE $pdo */

@@ -1,8 +1,8 @@
 <?php require_once './connect_to_db/connect_to_db.php';?>
 <?php
     /** @var CONNECT_TO_DATABSE $pdo */
-    $sql = $pdo->prepare("SELECT * FROM contact"); // подготовка запроса
-    $sql->execute();// выполнение запроса
+    $sql = $pdo->prepare("SELECT * FROM contact");
+    $sql->execute();
     $getInfoFromQuery = $sql->fetch(PDO::FETCH_ASSOC);
 ?>
 <!DOCTYPE html>
@@ -30,7 +30,7 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-6 col-lg-3">
-                        <a href = "web_page_login.php">Авторизация</a>
+                        <a href = "/web_page_login.php">Авторизация</a>
                     </a>
                 </div>
                 <div class="col-lg-3 d-none d-lg-block">

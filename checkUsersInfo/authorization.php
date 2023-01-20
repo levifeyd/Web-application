@@ -8,7 +8,7 @@
     $sql = $pdo->prepare($row);
     $sql->execute();
     $_SESSION['login'] = $login;
-    header('Location:/web_page_admin.php'); // делаем редирект на admin панель
+    header('Location:/web_page_admin.php');
 
 
 
