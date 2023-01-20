@@ -8,7 +8,7 @@
     $sql = $pdo->prepare($row);
     $sql->execute();
     $_SESSION['login'] = $login;
-    header('Location:/web_page_admin.php');
+    header('Location:/web_page_login.php');
 
 
 
