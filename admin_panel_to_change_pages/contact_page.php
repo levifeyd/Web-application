@@ -15,13 +15,12 @@
         <a href="/logout.php">Выйти</a>
         <br>
         <?php
-
             $db = new PdoConnect();
             $sql = $db->PDO->prepare("SELECT * FROM contact");
             $sql->execute();
             $getInfoFromQuery = $sql->fetch(PDO::FETCH_OBJ);
         ?>
-        <form action="/admin/contact/changeInfoContact.php" method="post">
+        <form action="/admin_panel_to_change_pages/contact/changeInfoContact.php" method="post">
         <input type="text" name="city" value="<?php echo $getInfoFromQuery->city ?>">
         <input type="text" name="phone" value="<?php echo $getInfoFromQuery->phone ?>">
         <input type="text" name="email" value="<?php echo $getInfoFromQuery->email ?>">

@@ -1,21 +1,20 @@
-<?php session_start();?>
-<?php require_once '../connect_to_db/connect_to_db.php';?>
+<?php session_start();
+require_once '../connect_to_db/connect_to_db.php';?>
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
-    <title></title>
+    <title>Административная панель</title>
 </head>
 <body>
 <div style="text-align: center">
-    <h1>Админинстративная панель редактирования услуг</h1>
+    <h1>Панель редактирования услуг</h1>
     <?php if (!empty($_SESSION["login"])) :?>
         <?php echo 'Добрый день, '.$_SESSION['login']; ?><br>
             <br>
         <a href="/logout.php">Выйти</a>
             <br>
         <?php
-
         $db = new PdoConnect();
         $sql = $db->PDO->prepare("SELECT * FROM services");
         $sql->execute();

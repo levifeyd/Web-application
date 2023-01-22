@@ -20,7 +20,7 @@
         $sql->execute();
         $getInfoFromQuery = $sql->fetch(PDO::FETCH_OBJ);
         ?>
-        <form action="/admin/header/changeHeader.php" method="post" enctype="multipart/form-data">
+        <form action="/admin_panel_to_change_pages/header/changeHeader.php" method="post" enctype="multipart/form-data">
             <input type="text" name="name" value="<?php echo $getInfoFromQuery->name ?>">
             <p>
                 <input type="file" name="im">

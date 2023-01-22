@@ -1,6 +1,5 @@
-<?php require_once '../connect_to_db/connect_to_db.php';?>
-<?php session_start();?>
-<?php
+<?php require_once '../connect_to_db/connect_to_db.php';
+    session_start();
     $login = $_POST["login"];
     $password = $_POST["password"];
 

@@ -15,13 +15,12 @@
         <a href="/logout.php">Выйти</a>
         <br>
         <?php
-
         $db = new PdoConnect();
         $sql = $db->PDO->prepare("SELECT * FROM about");
         $sql->execute();
         $getInfoFromQuery = $sql->fetch(PDO::FETCH_OBJ);
         ?>
-        <form action="/admin/about/changeInfoAbout.php" method="post" enctype="multipart/form-data">
+        <form action="/admin_panel_to_change_pages/about/changeInfoAbout.php" method="post" enctype="multipart/form-data">
             <input type="text" name="title" value="<?php echo $getInfoFromQuery->title ?>">
             <input type="text" name="description" value="<?php echo $getInfoFromQuery->description ?>">
             <p>

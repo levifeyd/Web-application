@@ -1,11 +1,6 @@
-<?php require 'admin_panel_pages/contact.php';?>
+<?php require 'admin_panel_public_pages/contact.php';?>
 <?php require_once './connect_to_db/connect_to_db.php';?>
 <?php
-//    /** @var CONNECT_TO_DATABSE $pdo */
-//    $dbSql = $pdo->prepare("SELECT * FROM header");
-//    $dbSql-> execute();
-//    $getNameFromQuery = $dbSql->fetch(PDO::FETCH_OBJ);
-
     $db = new PdoConnect();
     $sql = $db->PDO->prepare("SELECT * FROM header");
     $sql->execute();
@@ -20,9 +15,9 @@
             </div>
         </div>
     </div>
-<?php require 'admin_panel_pages/services.php';?>
-<?php require 'admin_panel_pages/about.php';?>
-<?php require 'admin_panel_pages/footer.php';?>
+<?php require 'admin_panel_public_pages/services.php';?>
+<?php require 'admin_panel_public_pages/about.php';?>
+<?php require 'admin_panel_public_pages/footer.php';?>
 
 
 

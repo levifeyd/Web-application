@@ -1,5 +1,5 @@
-<?php require_once './connect_to_db/connect_to_db.php';?>
 <?php
+    require_once './connect_to_db/connect_to_db.php';
     $db = new PdoConnect();
     $sql = $db->PDO->prepare("SELECT * FROM services");
     $sql->execute();
@@ -17,7 +17,7 @@
             <div class="col-lg-3 col-md-6 mb-lg-0">
                 <div class="person">
                     <figure>
-                        <img src="images/<?php echo $service->filename?>" class="img-fluid">
+                        <img src="/admin_panel_to_change_pages/img/<?php echo $service->filename?>" class="img-fluid">
                     </figure>
                     <div class="person-contents">
                         <h3><?php echo $service->title?></h3>

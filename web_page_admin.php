@@ -13,18 +13,18 @@
     <br>
     <?php echo 'Вы можете отредактировать следующие компоненты сайта'?><br>
     <br>
-    <a href="/admin/header.php">Фон страницы</a>
-    <a href="/admin/contact.php">Контакты</a>
-    <a href="/admin/services.php">Услуги</a>
-    <a href="/admin/about.php">О нас<br>
+    <a href="/admin_panel_to_change_pages/header_page.php">Фон страницы</a>
+    <a href="/admin_panel_to_change_pages/contact_page.php">Контакты</a>
+    <a href="/admin_panel_to_change_pages/services_page.php">Услуги</a>
+    <a href="/admin_panel_to_change_pages/about_page.php">О нас<br>
     <br>
     <a href="/logout.php">Выйти</a>
     <br>
-<?php else:
-    echo '<h2>Доступ закрыт ?</h2>';
-    echo '<a href="/">На главную</a>';
-?>
-    <?php endif ?>
+    <?php else:
+        echo '<h2>Доступ закрыт ?</h2>';
+        echo '<a href="/">На главную</a>';
+    ?>
+<?php endif ?>
 </div>
 </body>
 </html>
