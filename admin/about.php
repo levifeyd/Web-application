@@ -15,21 +15,22 @@
         <a href="/logout.php">Выйти</a>
         <br>
         <?php
-        /** @var CONNECT_TO_DATABSE $pdo */
-        $sql = $pdo->prepare("SELECT * FROM about");
+
+        $db = new PdoConnect();
+        $sql = $db->PDO->prepare("SELECT * FROM about");
         $sql->execute();
-        $res = $sql->fetch(PDO::FETCH_OBJ);
+        $getInfoFromQuery = $sql->fetch(PDO::FETCH_OBJ);
         ?>
         <form action="/admin/about/changeInfoAbout.php" method="post" enctype="multipart/form-data">
-            <input type="text" name="title" value="<?php echo $res->title ?>">
-            <input type="text" name="description" value="<?php echo $res->description ?>">
+            <input type="text" name="title" value="<?php echo $getInfoFromQuery->title ?>">
+            <input type="text" name="description" value="<?php echo $getInfoFromQuery->description ?>">
             <p>
                 <input type="file" name="im">
             </p>
             <input type="submit" name="save" value="Сохранить">
         </form>
         <br>
-        <img src="/images/<?php echo $res->filename ?>" width="200">
+        <img src="/images/<?php echo $getInfoFromQuery->filename ?>" width="200">
     <?php else:
         echo '<h2>Доступ закрыт ?</h2>';
         echo '<a href="/">На главную</a>';

@@ -25,10 +25,10 @@
 <?php
     $title=$_POST["title"];
     $description=$_POST["description"];
-    $sql = "UPDATE about SET title=:title, description=:description, filename=:filename";
-/** @var CONNECT_TO_DB $pdo */
-    $query = $pdo->prepare($sql);
-    $query->execute(["title" => $title, "description" => $description, "filename" => $_FILES['im']['name']]);
+
+    $db = new PdoConnect();
+    $sql = $db->PDO->prepare("UPDATE about SET title=:title, description=:description, filename=:filename");
+    $sql->execute(["title" => $title, "description" => $description, "filename" => $_FILES['im']['name']]);
     echo '<meta HTTP-EQUIV="Refresh" content="0; URl=/admin/about.php">';
 ?>
 

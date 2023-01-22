@@ -25,9 +25,9 @@
 <?php
     $name = $_POST["name"];
     $filename =  $_FILES['im']['name'];
-    $sql = "UPDATE header SET name=:name, filename=:filename";
-/** @var CONNECT_TO_DB $pdo */
-    $query = $pdo->prepare($sql);
-    $query->execute(["name" => $name, "filename" => $_FILES['im']['name']]);
+
+    $db = new PdoConnect();
+    $sql = $db->PDO->prepare("UPDATE header SET name=:name, filename=:filename");
+    $sql->execute(["name" => $name, "filename" => $_FILES['im']['name']]);
     echo '<meta HTTP-EQUIV="Refresh" content="0; URl=/admin/header.php">';
 ?>

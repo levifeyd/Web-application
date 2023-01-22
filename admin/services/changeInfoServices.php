@@ -26,14 +26,13 @@
 
     $url = $_SERVER['REQUEST_URI'];
     $url = explode('/', $url);
-    $str = $url[4];
+    $str = $url[4];// id
+
+    $db = new PdoConnect();
+    $sql = $db->PDO->prepare("UPDATE services SET title=:title, price=:price, filename=:filename WHERE id=$str");
+    $sql -> execute(["title" => $title, "price" => $price, "filename" => $_FILES['im']['name']]);
 
 
-
-    $sql = "UPDATE services SET title=:title, price=:price, filename=:filename WHERE id=$str";
-    /** @var CONNECT_TO_DB $pdo */
-    $query = $pdo->prepare($sql);
-    $query->execute(["title" => $title, "price" => $price, "filename" => $_FILES['im']['name']]);
     echo '<meta HTTP-EQUIV="Refresh" content="0; URl=/admin/services.php">';
 ?>
 

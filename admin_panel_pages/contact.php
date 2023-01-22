@@ -1,7 +1,7 @@
 <?php require_once './connect_to_db/connect_to_db.php';?>
 <?php
-    /** @var CONNECT_TO_DATABSE $pdo */
-    $sql = $pdo->prepare("SELECT * FROM contact");
+    $db = new PdoConnect();
+    $sql = $db->PDO->prepare("SELECT * FROM contact");
     $sql->execute();
     $getInfoFromQuery = $sql->fetch(PDO::FETCH_ASSOC);
 ?>

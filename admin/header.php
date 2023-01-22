@@ -15,20 +15,20 @@
         <a href="/logout.php">Выйти</a><br>
         <br>
         <?php
-        /** @var CONNECT_TO_DATABSE $pdo */
-        $sql = $pdo->prepare("SELECT * FROM header");
+        $db = new PdoConnect();
+        $sql = $db->PDO->prepare("SELECT * FROM header");
         $sql->execute();
-        $res = $sql->fetch(PDO::FETCH_OBJ);
+        $getInfoFromQuery = $sql->fetch(PDO::FETCH_OBJ);
         ?>
         <form action="/admin/header/changeHeader.php" method="post" enctype="multipart/form-data">
-            <input type="text" name="name" value="<?php echo $res->name ?>">
+            <input type="text" name="name" value="<?php echo $getInfoFromQuery->name ?>">
             <p>
                 <input type="file" name="im">
             </p>
             <input type="submit" name="save" value="Сохранить">
         </form>
         <br>
-        <img src="/images/<?php echo $res->filename ?>" width="200">
+        <img src="/images/<?php echo $getInfoFromQuery->filename ?>" width="200">
     <?php else:
         echo '<h2>Доступ закрыт ?</h2>';
         echo '<a href="/">На главную</a>';
