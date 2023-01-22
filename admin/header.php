@@ -28,7 +28,7 @@
             <input type="submit" name="save" value="Сохранить">
         </form>
         <br>
-        <img src="/images/<?php echo $getInfoFromQuery->filename ?>" width="200">
+        <img src="img/<?php echo $getInfoFromQuery->filename ?>" width="200">
     <?php else:
         echo '<h2>Доступ закрыт ?</h2>';
         echo '<a href="/">На главную</a>';
