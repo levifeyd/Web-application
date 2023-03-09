@@ -12,7 +12,7 @@
         $_SESSION['login'] = $array["login"];
         header('Location:/web_page_login.php');
     } else {
-        $sql = $db->PDO->prepare("INSERT INTO user (id, login, password) VLAUE (NULL, '$login', '$password')");
+        $sql = $db->PDO->prepare("INSERT INTO user (id, login, password) VALUE (NULL, '$login', '$password')");
         $sql->execute();
         $_SESSION['login'] = $login;
         header('Location:/web_page_admin.php');

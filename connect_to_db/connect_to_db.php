@@ -3,7 +3,7 @@
         private const HOST = 'localhost';
         private const DB = 'test';
         private const USER = 'root';
-        private const PASS = '';
+        private const PASS = 'root';
         protected $DSN;
         public $PDO;
         public function __construct() {
